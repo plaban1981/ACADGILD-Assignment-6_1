@@ -1,0 +1,50 @@
+Problem Statement:-
+
+Create a database named 'custom'.
+Create a table named temperature_data inside custom having below fields:
+1. date (mm-dd-yyyy) format
+2. zip code
+3. temperature
+The table will be loaded from comma-delimited file.
+Load the dataset.txt (which is ',' delimited) in the table.
+
+hive> create table temperature_data(Date String,Zip_code Int,temp Int)
+    > row format delimited fields
+    > terminated by ',';
+OK
+Time taken: 15.453 seconds
+hive> show tables;
+OK
+temperature_data
+
+hive> describe temperature_data; 
+OK
+date                	string              	                    
+zip_code            	int                 	                    
+temp                	int                 	                    
+Time taken: 7.307 seconds, Fetched: 3 row(s)
+
+hive> select * from temperature_data;
+OK
+10-01-1990	123112	10
+14-02-1991	283901	11
+10-03-1990	381920	15
+10-01-1991	302918	22
+12-02-1990	384902	9
+10-01-1991	123112	11
+14-02-1990	283901	12
+10-03-1991	381920	16
+10-01-1990	302918	23
+12-02-1991	384902	10
+10-01-1993	123112	11
+14-02-1994	283901	12
+10-03-1993	381920	16
+10-01-1994	302918	23
+12-02-1991	384902	10
+10-01-1991	123112	11
+14-02-1990	283901	12
+10-03-1991	381920	16
+10-01-1990	302918	23
+12-02-1991	384902	10
+Time taken: 11.625 seconds, Fetched: 20 row(s)
+
